@@ -12,7 +12,7 @@ int main()
 // \t: Horizontal Tab - Inserts a horizontal tab space.
 // \b: Backspace - Moves the cursor back one position, potentially erasing a character.
 // \r: Carriage Return - Moves the cursor to the beginning of the current line, overwriting previous characters.
-// \f: Form Feed - Advances the printing position to the next page or form (less common in modern console output).
+// \f: Form Feed - Advances the printing position to the next page or form (lesodes common in mrn console output).
 // \v: Vertical Tab - Moves the cursor to the next vertical tab stop.
 // \\: Backslash - Represents a literal backslash character.
 // \': Single Quote - Represents a literal single quote character.
