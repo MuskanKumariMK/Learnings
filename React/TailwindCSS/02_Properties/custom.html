@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Tailwind Page</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Hero Section -->
+    <section class="p-10 text-center">
+      <h2 class="title-secondary mb-4">Welcome to the Custom Tailwind Page</h2>
+      <p class="text-gray-600 mb-6">
+        This page is styled with custom Tailwind classes defined in
+        <code>custom.css</code>.
+      </p>
+      <button class="btn-primary mr-4">Get Started</button>
+      <button class="btn-secondary">Learn More</button>
+    </section>
+
+    <!-- Card Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
+      <div class="card">
+        <h3 class="title-secondary">Card One</h3>
+        <p class="text-gray-600 mt-2">
+          This is a reusable card styled with Tailwind.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="title-secondary">Card Two</h3>
+        <p class="text-gray-600 mt-2">
+          You can add as many custom styles as needed.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 class="title-secondary">Card Three</h3>
+        <p class="text-gray-600 mt-2">
+          Custom buttons, cards, and navbar are reusable.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
