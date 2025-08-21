@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active State Examples</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="p-5 space-y-10 bg-gray-50">
+    <!-- Back to Home -->
+    <a href="index.html" class="text-blue-600 hover:underline mb-6 inline-block"
+      >&larr; Back to Home</a
+    >
+    <button
+      class="py-3 px-6 bg-purple-500 text-white rounded-lg active:bg-purple-900 transition"
+    >
+      Submit
+    </button>
+
+    <!-- 1. Active Background -->
+    <button
+      class="py-3 px-6 bg-purple-600 text-white rounded-lg active:bg-purple-900 transition"
+    >
+      Active Background
+    </button>
+
+    <!-- 2. Active Scale -->
+    <button
+      class="py-3 px-6 bg-blue-600 text-white rounded-lg transform transition active:scale-95"
+    >
+      Active Scale (Shrink)
+    </button>
+
+    <!-- 3. Active Shadow -->
+    <button
+      class="py-3 px-6 bg-green-600 text-white rounded-lg shadow-lg active:shadow-inner transition"
+    >
+      Active Shadow (Inner)
+    </button>
+
+    <!-- 4. Active Border -->
+    <button
+      class="py-3 px-6 border-2 border-gray-400 rounded-lg active:border-red-600 transition"
+    >
+      Active Border
+    </button>
+
+    <!-- 5. Active Text Color -->
+    <button
+      class="py-3 px-6 bg-yellow-400 text-black rounded-lg active:text-white active:bg-yellow-600 transition"
+    >
+      Active Text + BG
+    </button>
+
+    <!-- Card Example with Active -->
+    <div
+      class="bg-white p-6 rounded-lg border shadow hover:shadow-md active:scale-95 transition"
+    >
+      <h2 class="font-semibold text-lg mb-2">Card with Active</h2>
+      <p class="text-gray-600 mb-3">Press and hold → card shrinks slightly.</p>
+      <a
+        href="#"
+        class="inline-block py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 active:bg-blue-900"
+      >
+        Active Button
+      </a>
+    </div>
+  </body>
+</html>

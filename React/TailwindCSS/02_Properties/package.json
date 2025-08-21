@@ -1,14 +1,12 @@
 {
-  "name": "02_font",
+  "name": "02_properties",
   "version": "1.0.0",
   "main": "index.js",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",

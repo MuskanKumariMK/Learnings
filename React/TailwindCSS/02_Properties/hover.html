@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover</title>
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="p-5 space-y-6 bg-gray-50">
+    <!-- Back to Home -->
+    <a href="index.html" class="text-blue-600 hover:underline mb-6 inline-block"
+      >&larr; Back to Home</a
+    >
+    <div class="m-auto p-14">
+      <!-- 1. Background Color Hover -->
+      <button
+        class="py-3 px-6 bg-purple-700 hover:bg-purple-900 text-white rounded-lg"
+      >
+        Hover Background
+      </button>
+
+      <!-- 2. Text Color Hover -->
+      <button
+        class="py-3 px-6 bg-gray-200 text-gray-700 hover:text-red-600 rounded-lg"
+      >
+        Hover Text Color
+      </button>
+
+      <!-- 3. Border Color Hover -->
+      <button
+        class="py-3 px-6 border-2 border-gray-400 hover:border-green-600 rounded-lg"
+      >
+        Hover Border Color
+      </button>
+
+      <!-- 4. Shadow Hover -->
+      <button
+        class="py-3 px-6 bg-white border rounded-lg shadow hover:shadow-xl"
+      >
+        Hover Shadow
+      </button>
+
+      <!-- 5. Scale (Zoom) Hover -->
+      <button
+        class="py-3 px-6 bg-blue-600 text-white rounded-lg transform transition hover:scale-110"
+      >
+        Hover Zoom
+      </button>
+
+      <!-- 6. Rotate Hover -->
+      <button
+        class="py-3 px-6 bg-pink-500 text-white rounded-lg transform transition hover:rotate-3"
+      >
+        Hover Rotate
+      </button>
+
+      <!-- 7. Opacity Hover -->
+      <button
+        class="py-3 px-6 bg-green-600 text-white rounded-lg transition hover:opacity-50"
+      >
+        Hover Opacity
+      </button>
+
+      <!-- 8. Combined Hover -->
+      <button
+        class="py-3 px-6 bg-yellow-400 text-black rounded-lg transform transition hover:bg-yellow-600 hover:scale-110 hover:shadow-lg"
+      >
+        Hover Combo
+      </button>
+    </div>
+  </body>
+</html>

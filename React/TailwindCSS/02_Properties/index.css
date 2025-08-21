@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
+
+.btn-yellow {
+  @apply text-white bg-yellow-400 hover:bg-yellow-500 
+         focus:ring-4 focus:ring-yellow-300 
+         font-medium rounded-full px-6 py-2 
+         transition-all duration-200;
+}
+
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-yellow {
+    @apply text-white bg-yellow-400 hover:bg-yellow-500 
+           focus:ring-4 focus:ring-yellow-300 
+           font-medium rounded-full px-6 py-2 
+           transition-all duration-200;
+  }
+
+  .btn-green {
+    @apply text-white bg-green-500 hover:bg-green-600 
+           focus:ring-4 focus:ring-green-300 
+           font-medium rounded-full px-6 py-2 
+           transition-all duration-200;
+  }
+}
+
+@tailwind utilities;
+
+/* --------------------------------
+   Difference:
+   - The first `.btn-yellow` (plain @apply) works,
+     but isn’t tied to Tailwind’s layering system.
+   - The second `.btn-yellow` and `.btn-green` are
+     inside @layer components, so they:
+      Won’t get purged by Tailwind
+        Respect layer ordering (components before utilities)
+        Are the recommended way for reusable styles
+---------------------------------- */
