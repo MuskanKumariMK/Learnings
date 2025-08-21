@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Responsive Design Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 p-6">
+    <a href="index.html" class="text-blue-600 hover:underline mb-6 inline-block"
+      >&larr; Back to Home</a
+    >
+
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center text-gray-800"
+    >
+      Tailwind CSS Responsive Design
+    </h1>
+
+    <p class="text-gray-700 text-center mb-8">
+      Resize your browser to see how elements adapt to different screen sizes
+      using <strong>sm, md, lg, xl</strong> breakpoints.
+    </p>
+
+    <!-- Grid Example -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+    >
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all text-center"
+      >
+        <h2 class="font-semibold text-xl mb-2">Column 1</h2>
+        <p class="text-gray-600">Responsive card example</p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all text-center"
+      >
+        <h2 class="font-semibold text-xl mb-2">Column 2</h2>
+        <p class="text-gray-600">Responsive card example</p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all text-center"
+      >
+        <h2 class="font-semibold text-xl mb-2">Column 3</h2>
+        <p class="text-gray-600">Responsive card example</p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-all text-center"
+      >
+        <h2 class="font-semibold text-xl mb-2">Column 4</h2>
+        <p class="text-gray-600">Responsive card example</p>
+      </div>
+    </div>
+
+    <!-- Text Size Example -->
+    <div class="mt-12 space-y-4">
+      <p
+        class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800"
+      >
+        This text scales responsively from small to extra large screens.
+      </p>
+      <p class="text-gray-600 text-center">
+        Try resizing your window to see the effect of Tailwind responsive
+        classes.
+      </p>
+    </div>
+
+    <!-- Visibility Example -->
+    <div class="mt-12 text-center space-y-2">
+      <div
+        class="bg-blue-200 p-4 rounded sm:bg-green-200 md:bg-yellow-200 lg:bg-pink-200 xl:bg-red-200"
+      >
+        Resize screen to change background color
+      </div>
+      <div class="bg-gray-300 p-4 rounded sm:hidden md:block lg:block">
+        Hidden on small screens, visible on medium and larger screens
+      </div>
+    </div>
+  </body>
+</html>

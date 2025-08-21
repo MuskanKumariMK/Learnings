@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margin, Padding, and Border Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-5 bg-gray-50 space-y-6">
+    <a href="index.html" class="text-blue-600 hover:underline mb-6 inline-block"
+      >&larr; Back to Home</a
+    >
+
+    <!-- BORDER -->
+    <div class="border border-gray-400 p-4 rounded bg-white">
+      <h2 class="font-bold mb-2 bg-gray-200 p-2 rounded">Border Utilities</h2>
+      <div class="space-y-2">
+        <div class="border border-gray-500 p-2">Default border</div>
+        <div class="border-2 border-gray-500 p-2">border-2</div>
+        <div class="border-4 border-gray-500 p-2">border-4</div>
+        <div class="border-8 border-gray-500 p-2">border-8</div>
+        <div class="border-t-4 border-red-500 p-2">border-t-4 (top)</div>
+        <div class="border-b-4 border-green-500 p-2">border-b-4 (bottom)</div>
+        <div class="border-l-4 border-blue-500 p-2">border-l-4 (left)</div>
+        <div class="border-r-4 border-yellow-500 p-2">border-r-4 (right)</div>
+        <div class="rounded p-2 border border-gray-500">
+          rounded (all corners)
+        </div>
+        <div class="rounded-t-lg p-2 border border-gray-500">
+          rounded-t-lg (top corners)
+        </div>
+        <div class="rounded-b-lg p-2 border border-gray-500">
+          rounded-b-lg (bottom corners)
+        </div>
+        <div class="rounded-l-lg p-2 border border-gray-500">
+          rounded-l-lg (left corners)
+        </div>
+        <div class="rounded-r-lg p-2 border border-gray-500">
+          rounded-r-lg (right corners)
+        </div>
+        <div class="rounded-full p-2 border border-gray-500">
+          rounded-full (circle)
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
