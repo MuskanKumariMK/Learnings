@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MAUI_Test_App.TabbedPageDemo"
+            BarBackgroundColor="Black"           
+            SelectedTabColor="Orange"
+            UnselectedTabColor="White">
+
+     <ContentPage Title="Tab1" IconImageSource="dotnet_bot.png">
+          <StackLayout>
+               <Label Text="This is Tab 1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"/>
+               <Switch IsToggled="True"/>
+               <Slider Minimum="0" Maximum="100" Value="50"/>
+          </StackLayout>
+     </ContentPage>
+
+     <ContentPage Title="Tab2" IconImageSource="dotnet_bot.png">
+          <StackLayout>
+               <Label Text="This is Tab 2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"/>
+               <Button Text="Click Me"
+                    BackgroundColor="Orange"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"/>
+               <Entry Placeholder="Enter your name"/>
+          </StackLayout>
+     </ContentPage>
+
+     <ContentPage Title="Tab3" IconImageSource="dotnet_bot.png">
+          <StackLayout>
+               <Label Text="This is Tab 3"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"/>
+               <CollectionView>
+                    <CollectionView.ItemsSource>
+                         <x:Array Type="{x:Type x:String}">
+                              <x:String>Item 1</x:String>
+                              <x:String>Item 2</x:String>
+                              <x:String>Item 3</x:String>
+                              <x:String>Item 4</x:String>
+                         </x:Array>
+                    </CollectionView.ItemsSource>
+                    <CollectionView.ItemTemplate>
+                         <DataTemplate>
+                              <Frame BorderColor="Orange" Padding="10" Margin="5">
+                                   <Label Text="{Binding}" FontSize="16" TextColor="Black"/>
+                              </Frame>
+                         </DataTemplate>
+                    </CollectionView.ItemTemplate>
+               </CollectionView>
+          </StackLayout>
+     </ContentPage>
+
+</TabbedPage>

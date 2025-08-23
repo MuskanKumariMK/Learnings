@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Test_App.HomePage"
+             Title="HomePage">
+    <FlexLayout Direction="Column">
+        <Label 
+             Text="This Is Header"
+             HorizontalTextAlignment="Center"
+             BackgroundColor="Purple"
+             TextColor="White"
+          />
+          <FlexLayout FlexLayout.Grow="1">
+               <Label Text="Content Sections"
+                      HorizontalTextAlignment="Center" 
+                      VerticalTextAlignment="Center"
+                      FlexLayout.Grow="1"
+                      BackgroundColor="Green" TextColor="White"   />
+               <BoxView 
+                    FlexLayout.Basis="50"
+                    FlexLayout.Order="-1"
+                    Color="Red"    />
+               <BoxView 
+                    FlexLayout.Basis="50"   
+                    Color="Orange" />
+          </FlexLayout>
+    </FlexLayout>
+</ContentPage>

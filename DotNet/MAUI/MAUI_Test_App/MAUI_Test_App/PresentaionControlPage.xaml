@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Test_App.PresentaionControlPage"
+             Title="PresentaionControlPage">
+     <ScrollView>
+          <StackLayout >
+          <BoxView 
+               BackgroundColor="Purple"
+               HeightRequest="200"/>
+          <Label 
+               Text="Dotnet MAUI" 
+               TextColor="Gray"
+               FontAttributes="Bold"
+               FontSize="Title"
+               HorizontalOptions="Center"/>
+          <Ellipse 
+               Fill="Yellow" 
+               Stroke="Green"
+               StrokeThickness="12"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               WidthRequest="200" />
+        <!--  <Ellipse 
+               Fill="Blue" 
+               Stroke="Yellow"
+               StrokeThickness="12"
+               HeightRequest="100"
+               HorizontalOptions="Start"
+               WidthRequest="100" />
+          <Ellipse 
+               Fill="Pink"
+               Stroke="Blue"
+               StrokeThickness="12"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               WidthRequest="250" /> -->
+          <Line 
+               Stroke="Red"
+               X1="0" X2="360" Y1="0" Y2="0"
+               StrokeThickness="10" />
+          <Rectangle 
+               Fill="Orange"
+               Stroke="Green"
+               StrokeThickness="20"
+               WidthRequest="300"
+               HeightRequest="200"
+               RadiusX="2"
+               RadiusY="3" />
+          <Polygon
+               Fill="Blue"
+               Stroke="Red"
+               StrokeThickness="6"
+               Points="30,10 60,70 0,70" />
+          <Polygon
+               Fill="YellowGreen"
+               Stroke="Green"
+               StrokeThickness="6"
+               Points="30,10 60,70 0,70"
+               StrokeDashArray="1,1"
+               StrokeDashOffset="6"/>
+          <Polyline
+               HorizontalOptions="Center"
+               Points="100,0,105,30,40,12,16,7,10,50,6,8"
+               Stroke="Red"
+               />
+               <Path
+                    Aspect="Uniform"
+                    Data="M 10 , 100 L 100 ,100 100 ,50Z"
+                    Stroke="Purple"
+                    StrokeThickness="10"
+                    HorizontalOptions="Center"/>
+               <Border
+                    Stroke="Beige"
+                    StrokeThickness="10"
+                    Background="Black"
+                    Padding="16.5"
+                    HorizontalOptions="Center"
+                    />
+               <Border Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                         <RoundRectangle CornerRadius="50,10,0,50" />
+                    </Border.StrokeShape>
+
+                    <Label
+        Text="Dotnet MAUI"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        TextColor="White"
+        FontSize="20"
+        />
+               </Border>
+               <Frame  Margin="10"
+                       BackgroundColor="ForestGreen"
+                       Padding="10">
+                    <Image
+      Source="dotnet_bot.png"
+      />
+               </Frame>
+               <WebView  HeightRequest="500" Source="https://www.google.com"/>
+          </StackLayout>
+     </ScrollView>
+</ContentPage>
