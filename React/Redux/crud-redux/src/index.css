@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .input-field {
+    @apply w-full p-3 mb-4 border border-gray-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-purple-500;
+  }
+
+  .form-card {
+    @apply bg-white shadow-md rounded-2xl p-6 w-full max-w-md;
+  }
+
+  .form-title {
+    @apply text-2xl font-semibold text-center mb-6 text-purple-600;
+  }
+
+  .btn-primary {
+    @apply w-full bg-purple-600 text-white py-3 rounded-lg 
+           hover:bg-purple-700 transition;
+  }
+}
