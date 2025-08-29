@@ -14,7 +14,14 @@
                //MainPage = new GridPageDemo(); 
                //MainPage = new GridPageDemo(); 
                //MainPage = new HomePage();
-               MainPage = new PresentaionControlPage();
+               //MainPage = new PresentaionControlPage();
+               //MainPage = new CommandDemo();
+               //MainPage = new InputControlS();
+               //MainPage = new CollectionConhtrolePage();
+               //MainPage = new ResourcePageDemo();
+               //MainPage = new DataBindings();
+               MainPage = new ModesDemo();
+               MainPage = new INotifyProvideDemo();
           }
      }
 }
