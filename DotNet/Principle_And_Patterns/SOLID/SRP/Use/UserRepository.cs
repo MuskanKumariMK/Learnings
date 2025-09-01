@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common.Models;
 
 namespace SRP.Use
 {
-     internal class UserRepository
+     public class UserRepository
      {
+          public void Save(User user)
+          {
+               Console.WriteLine($"User '{user.Name}' saved to database.");
+          }
      }
 }

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NotUse\" />
+    <ProjectReference Include="..\..\Commons\Common\Common.csproj" />
   </ItemGroup>
 
 </Project>

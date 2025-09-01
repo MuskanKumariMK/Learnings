@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common.Models;
 
 namespace SRP.Use
 {
-     internal class UserValidator
+     public class UserValidator
      {
+          public bool Validate(User user)
+          {
+               return !string.IsNullOrEmpty(user.Name);
+          }
      }
 }

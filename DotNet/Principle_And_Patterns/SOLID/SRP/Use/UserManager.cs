@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common.Models;
 
 namespace SRP.Use
 {
-     internal class UserManager
+     public class UserManager
      {
+          private readonly UserValidator _validator = new UserValidator();
+          private readonly UserRepository _repository = new UserRepository();
+
+          public void AddUser(User user)
+          {
+               if (_validator.Validate(user))
+               {
+                    _repository.Save(user);
+               }
+               else
+               {
+                    Console.WriteLine("User validation failed.");
+               }
+          }
      }
 }

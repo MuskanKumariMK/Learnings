@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Common.Models;
 
 namespace SRP.NotUse
 {
-     internal class UserManager
+     public class UserManager
      {
+          public void AddUser(User user)
+          {
+               // Validation logic
+               if (string.IsNullOrEmpty(user.Name))
+               {
+                    Console.WriteLine("User validation failed.");
+                    return;
+               }
+
+               // Data persistence logic (simulated)
+               Console.WriteLine($"User '{user.Name}' saved to database.");
+          }
      }
 }
