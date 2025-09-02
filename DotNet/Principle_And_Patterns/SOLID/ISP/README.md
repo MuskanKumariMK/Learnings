@@ -54,10 +54,6 @@ ISP/
 │   ├── OldPrinter.cs
 │   └── ModernPrinter.cs
 │
-├── Common/
-│   └── Performance/
-│       └── PerformanceTester.cs
-│
 ├── Program.cs
 └── README.md
 ```

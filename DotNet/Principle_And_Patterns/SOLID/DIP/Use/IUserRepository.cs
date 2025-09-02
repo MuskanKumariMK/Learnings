@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DIP.Use
+﻿namespace DIP.Use
 {
+     // Abstraction
      internal interface IUserRepository
      {
+          void Save(string user);
      }
+
 }
