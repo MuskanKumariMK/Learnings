@@ -1,7 +1,8 @@
 ﻿namespace ISP.Use
 {
-
-     public class IPrinter
+     interface IPrinter
      {
+          void Print();
      }
+
 }

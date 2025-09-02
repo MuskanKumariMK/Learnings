@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ISP.Use
+﻿namespace ISP.Use
 {
-     internal class IScanner
+
+     interface IScanner
      {
+          void Scan();
      }
 }

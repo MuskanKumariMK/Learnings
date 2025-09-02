@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ISP.NotUse
+﻿namespace ISP.NotUse
 {
-     internal class IMultiFunctionDevice
+     public interface IMultiFunctionDevice
      {
+          void Print();
+          void Scan();
+          void Fax();
      }
 }
