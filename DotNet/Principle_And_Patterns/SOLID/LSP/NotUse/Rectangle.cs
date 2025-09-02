@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LSP.NotUse
+﻿namespace LSP.NotUse
 {
-     internal class Rectangle
+     // Base class
+     public class Rectangle
      {
+          public virtual int Width { get; set; }
+          public virtual int Height { get; set; }
+
+          public int Area() => Width * Height;
      }
+
 }

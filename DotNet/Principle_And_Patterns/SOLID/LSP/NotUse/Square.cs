@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LSP.NotUse
+﻿namespace LSP.NotUse
 {
-     internal class Square
+     // Subclass that breaks LSP
+     public class Square : Rectangle
      {
+          public override int Width
+          {
+               set { base.Width = base.Height = value; }
+          }
+
+          public override int Height
+          {
+               set { base.Width = base.Height = value; }
+          }
+          //Square inherits Rectangle, but changes the expected behavior.
+
+          //A rectangle should allow independent Width and Height.
+
+          //If we substitute Square where Rectangle is expected, the program breaks.
      }
 }

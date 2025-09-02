@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LSP.Use
+﻿namespace LSP.Use
 {
-     internal class SquareShape
+     public class SquareShape : IShape
      {
+          public double Side { get; set; }
+          public double Area() => Side * Side;
      }
 }
