@@ -1,11 +1,10 @@
 ﻿namespace OCP.Use
 {
-     public class VIPDiscount : IDiscount
-
+     public class PremiumDiscount : IDiscount
      {
           public double Apply(double price)
           {
-               return price * 0.7;
+               return price * 0.6;
           }
      }
 }

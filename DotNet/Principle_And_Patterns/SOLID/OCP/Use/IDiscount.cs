@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OCP.Use
+﻿namespace OCP.Use
 {
-     internal class IDiscount
+     public interface IDiscount
      {
+          double Apply(double price);
      }
 }
