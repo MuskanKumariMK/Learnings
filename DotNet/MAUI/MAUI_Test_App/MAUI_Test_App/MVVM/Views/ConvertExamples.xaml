@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:convert="clr-namespace:MAUI_Test_App.MVVM.ViewModels"
+             x:Class="MAUI_Test_App.MVVM.Views.ConvertExamples"
+             Title="ConvertExamples">
+
+     <ContentPage.Resources>
+          <convert:ConverterClass x:Key="convertClass" />
+     </ContentPage.Resources>
+
+     <StackLayout Padding="20" Spacing="15">
+          <Label Text="Welcome to .NET MAUI!"
+               HorizontalOptions="Center"
+               FontSize="24"/>
+
+          <Label Text="{Binding Person.Married}"
+               HorizontalOptions="Center"
+               FontSize="18"/>
+          <CheckBox IsChecked="{Binding Person.Married, Converter={StaticResource convertClass}}"
+                  HorizontalOptions="Center" />
+     </StackLayout>
+</ContentPage>
