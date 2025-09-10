@@ -87,6 +87,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Event_Driven", "Event_Drive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleApp", "Architectures\Layered_Architecture\ExampleApp\ExampleApp.csproj", "{5F19A09C-DAF1-42CB-98A4-C0CBAE6B32C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID", "SOLID\SRP\SOLID\SOLID.csproj", "{531C6529-081E-4E4C-A4CF-D85EE5FA70AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +215,10 @@ Global
 		{5F19A09C-DAF1-42CB-98A4-C0CBAE6B32C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F19A09C-DAF1-42CB-98A4-C0CBAE6B32C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F19A09C-DAF1-42CB-98A4-C0CBAE6B32C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531C6529-081E-4E4C-A4CF-D85EE5FA70AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531C6529-081E-4E4C-A4CF-D85EE5FA70AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531C6529-081E-4E4C-A4CF-D85EE5FA70AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531C6529-081E-4E4C-A4CF-D85EE5FA70AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -256,6 +262,7 @@ Global
 		{0F6FB80C-46B9-4090-A293-8FAD975BF3A9} = {A928BEA8-F520-49ED-9C2B-E780D6EB9D89}
 		{81E6D0FF-8D7C-4149-9A46-8A232CE1F5ED} = {A928BEA8-F520-49ED-9C2B-E780D6EB9D89}
 		{5F19A09C-DAF1-42CB-98A4-C0CBAE6B32C1} = {8DA0F7E0-3FEE-4357-8363-8D04F8C1B631}
+		{531C6529-081E-4E4C-A4CF-D85EE5FA70AB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3603678C-69B7-41D7-B058-7B865DF67378}
