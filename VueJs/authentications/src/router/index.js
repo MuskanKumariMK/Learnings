@@ -7,6 +7,7 @@ import CreateProduct from "../views/admin/Products/CreateProduct.vue";
 import GetProducts from "../views/admin/Products/GetProducts.vue";
 import EditProduct from "../views/admin/Products/EditProduct.vue";
 import LoginPage from "../views/auth/LoginPage.vue";
+import RegisterPage from "../views/auth/RegisterPage.vue";
 const routes = [
   {
     path: "/",
@@ -22,6 +23,11 @@ const routes = [
     path: "/login",
     name: "Login",
     component: LoginPage,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: RegisterPage,
   },
   {
     path: "/admin",
