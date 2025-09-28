@@ -17,9 +17,12 @@
     <VComponent />
     <hr />
     <VProps />
+    <hr />
+    <AuthStateExample />
   </div>
 </template>
 <script>
+import AuthStateExample from "@/components/AuthStateExample.vue";
 import Bind from "@/components/Bind.vue";
 import VComponent from "@/components/VComponent.vue";
 import VEMit from "@/components/VEMit.vue";
@@ -39,6 +42,7 @@ export default {
     VComponent,
     VProps,
     VEvents,
+    AuthStateExample,
   },
 };
 </script>

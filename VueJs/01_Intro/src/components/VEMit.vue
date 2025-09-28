@@ -2,7 +2,11 @@
   <div>
     <h1>Emit</h1>
 
-    <ChildrenComponents @btn-clicked="btnClicked" @increment="increaseCount" />
+    <ChildrenComponents
+      @btn-clicked="btnClicked"
+      @increment="increaseCount"
+      @notify="handleNotify"
+    />
 
     <p>Counter: {{ count }}</p>
   </div>
@@ -24,6 +28,9 @@ export default {
     },
     increaseCount(value) {
       this.count += value;
+    },
+    handleNotify(message) {
+      alert(message);
     },
   },
 };
