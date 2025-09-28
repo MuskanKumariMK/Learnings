@@ -5,3 +5,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
 
 npx json-server --watch src/data/db.json --port 5000
+
+EMit
+Props
+Component
+Event
+V-for
+watch
