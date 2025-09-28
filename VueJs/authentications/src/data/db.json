@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Wireless Mouse",
+      "price": 799,
+      "category": "Electronics",
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "name": "Mechanical Keyboard",
+      "price": 2499,
+      "category": "Electronics",
+      "inStock": true
+    },
+    {
+      "id": "9144",
+      "name": "fsd",
+      "price": "212",
+      "category": "df",
+      "inStock": "true"
+    },
+    {
+      "name": "NewEdit Products",
+      "price": 21,
+      "category": "NewEdit Products",
+      "inStock": true,
+      "id": "3800"
+    }
+  ]
+}
