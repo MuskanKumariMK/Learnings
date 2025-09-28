@@ -27,3 +27,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+EMit
+Props
+Component
+Event
+V-for
+watch
