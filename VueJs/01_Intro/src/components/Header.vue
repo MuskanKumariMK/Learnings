@@ -2,13 +2,28 @@
   <div class="flex header">
     <div class="heading">Header</div>
     <ul class="flex header-ul">
-      <li class="header-li">Home</li>
-      <li class="header-li">Contact</li>
-      <li style="padding-right: 10px" class="header-li">About</li>
+      <li class="header-li">
+        <router-link to="/">Home</router-link>
+      </li>
+      <li class="header-li">
+        <router-link to="/contact">Contact</router-link>
+      </li>
+      <li class="header-li" style="padding-right: 10px">
+        <router-link to="/about">About</router-link>
+      </li>
+      <li class="header-li" style="padding-right: 10px">
+        <router-link to="/learning">Learning</router-link>
+      </li>
     </ul>
   </div>
 </template>
-<script></script>
+
+<script>
+export default {
+  name: "Header",
+};
+</script>
+
 <style>
 .header {
   background-color: rgb(70, 0, 128);
@@ -33,5 +48,13 @@
   cursor: pointer;
   padding: 2px;
   font-size: 18px;
+}
+.header-li a {
+  text-decoration: none;
+  color: white; /* make link text white */
+}
+.header-li a.router-link-active {
+  font-weight: bold;
+  border-bottom: 2px solid yellow; /* highlight active route */
 }
 </style>
