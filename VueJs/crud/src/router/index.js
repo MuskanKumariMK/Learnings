@@ -23,12 +23,12 @@ const routes = [
     component: AdminPage,
     children: [
       {
-        path: "products/create", // ✅ No leading slash
+        path: "products/create", 
         name: "CreateProduct",
         component: CreateProduct,
       },
       {
-        path: "products/get", // ✅ No leading slash
+        path: "products/get", 
         name: "GetProducts",
         component: GetProducts,
       },
