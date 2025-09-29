@@ -1,4 +1,6 @@
-﻿namespace MAUI_Test_App
+﻿using MAUI_Test_App.MVVM.Views;
+
+namespace MAUI_Test_App
 {
      public partial class App : Application
      {
@@ -20,8 +22,12 @@
                //MainPage = new CollectionConhtrolePage();
                //MainPage = new ResourcePageDemo();
                //MainPage = new DataBindings();
-               MainPage = new ModesDemo();
-               MainPage = new INotifyProvideDemo();
+               //MainPage = new ModesDemo();
+               //MainPage = new INotifyProvideDemo();
+               //MainPage = new ProductPage();
+               //MainPage = new BindCollection();
+               //MainPage = new ConvertExamples();
+               MainPage = new CommandExample();
           }
      }
 }
