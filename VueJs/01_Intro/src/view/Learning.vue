@@ -19,6 +19,8 @@
     <VProps />
     <hr />
     <AuthStateExample />
+    <hr/>
+    <VHtml />
   </div>
 </template>
 <script>
@@ -28,6 +30,7 @@ import VComponent from "@/components/VComponent.vue";
 import VEMit from "@/components/VEMit.vue";
 import VEvents from "@/components/VEvents.vue";
 import VFor from "@/components/VFor.vue";
+import VHtml from "@/components/VHtml.vue";
 import VIf from "@/components/VIf.vue";
 import VProps from "@/components/VProps.vue";
 import VWatch from "@/components/VWatch.vue";
@@ -43,6 +46,7 @@ export default {
     VProps,
     VEvents,
     AuthStateExample,
+    VHtml
   },
 };
 </script>
