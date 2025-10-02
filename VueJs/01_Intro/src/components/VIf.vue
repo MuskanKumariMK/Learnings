@@ -4,11 +4,20 @@
     <p v-if="Instock">In Stock</p>
     <p v-else>Out of Stock</p>
     <button @click="toggleStock">Toggle Stock (Current: {{ Instock }})</button>
+    <SHowComponent v-if="Instock" />
+    <ElseShowComponent v-else />
   </div>
 </template>
 <script>
+import ElseShowComponent from './ExampleComponents/ElseShowComponent.vue';
+import SHowComponent from './ExampleComponents/SHowComponent.vue';
+
 export default {
   name: "V-If",
+  components:{
+    SHowComponent,
+    ElseShowComponent,
+  },
   data() {
     return {
       Instock: true,

@@ -19,6 +19,8 @@
     <VProps />
     <hr />
     <AuthStateExample />
+    <hr/>
+    <VSHow />
   </div>
 </template>
 <script>
@@ -30,6 +32,7 @@ import VEvents from "@/components/VEvents.vue";
 import VFor from "@/components/VFor.vue";
 import VIf from "@/components/VIf.vue";
 import VProps from "@/components/VProps.vue";
+import VSHow from "@/components/VSHow.vue";
 import VWatch from "@/components/VWatch.vue";
 export default {
   name: "Learning",
@@ -43,6 +46,7 @@ export default {
     VProps,
     VEvents,
     AuthStateExample,
+    VSHow
   },
 };
 </script>
