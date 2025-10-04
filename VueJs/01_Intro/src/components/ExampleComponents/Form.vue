@@ -10,38 +10,69 @@ export default {
         return {
             acceptTerms: false,
             errors: {},
+            skillsArray: ["Frontend", "Backend", "Database"],
 
         };
     },
+    computed:{
+        computedCountry(){
+            console.log("Computed Country Called");
+            return this.dynamicCountry();
+        }
+    },
     methods: {
+        dynamicCountry(){
+
+            return [
+                {text:"Select Country", value:""},
+                {text:"USA", value:"usa"},
+                {text:"UK", value:"uk"},
+                {text:"India", value:"india"},
+                {text:"Australia", value:"australia"},
+                {text:"Canada", value:"canada"},
+                {text:"Germany", value:"germany"},
+                {text:"Japan", value:"japan"},
+                {text:"China", value:"china"},
+                {text:"Brazil", value:"brazil"},
+                {text:"Russia", value:"russia"},
+            ]
+        },
         validate() {
+            
             this.errors = {};
             let name = this.form.name;
             let email = this.form.email;
             let age = this.form.age;
             let gender = this.form.gender;
             let country = this.form.country;
-let skills = this.form.skills;
+            let skills = this.form.skills;
 
             if (!name) {
                 // alert("Name is required!");
                 this.errors.name = "Name is required!";
                 return;
             }
-            if (name.lenght < 8) {
+            if (name.length < 8) {
                 // alert("Name should be at least 8 characters long!");
                 this.errors.name = "Name should be at least 8 characters long!";
                 return;
             }
             if (!email) {
+               
                 // alert("Email is required!");
                 this.errors.email = "Email is required!";
                 return;
-            } if (!this.form.email.includes("@")) {
+            } if (!exportmail.includes("@")) {
                 // alert("Enter a valid email");
                 this.errors.email = "Enter a valid email";
                 return;
             }
+            //  let regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            //     if (!regexEmail.test(email)) {
+            //         this.errors.email = "Enter a valid email";
+            //         return;
+            //     }
+         
             if (!age) {
                 // alert("Age is required!");
                 this.errors.age = "Age is required!";
@@ -56,27 +87,93 @@ let skills = this.form.skills;
                 // alert("Country is required!");
                 this.errors.country = "Country is required!";
                 return;
-            }    if (!skills.length) {
+            } if (!skills.length) {
                 // alert("Select at least one skill!");
                 this.errors.skills = "Select at least one skill!";
                 return;
-            }if (!this.acceptTerms) {
+            } if (!this.acceptTerms) {
                 // alert("You must accept the Terms & Conditions!");
                 this.errors.acceptTerms = "You must accept the Terms & Conditions!";
                 return;
-            } 
-         
+            }
+
             return Object.keys(this.errors).length === 0;
         },
         submit() {
 
-            if (this.validate()) {
+            // if (this.validate()) {
                 console.log("Form Data:", this.form);
                 alert("Form submitted successfully!");
-            }
+            // }
         },
     },
-};
+   watch: {
+//   "form.email"(newEmail) {
+//     // Email regex pattern
+//     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+//     if (!regexEmail.test(newEmail)) {
+//       this.errors.email = "Enter a valid email";
+//     } else {
+//       this.errors.email = ""; // clear error if valid
+//     }
+//   }
+
+  form: {
+    handler(newForm) {
+      this.errors = {}; // reset errors
+
+      let { name, email, age, gender, country, skills } = this.form;
+
+      // Name validation
+      if (!name) {
+        this.errors.name = "Name is required!";
+      } else if (name.length < 8) {
+        this.errors.name = "Name should be at least 8 characters long!";
+      }
+
+      // Email validation
+      if (!email) {
+        this.errors.email = "Email is required!";
+      } else {
+        const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!regexEmail.test(email)) {
+          this.errors.email = "Enter a valid email!";
+        }
+      }
+
+      // Age validation
+      if (!age) {
+        this.errors.age = "Age is required!";
+      }
+
+      // Gender validation
+      if (!gender) {
+        this.errors.gender = "Gender is required!";
+      }
+
+      // Country validation
+      if (!country) {
+        this.errors.country = "Country is required!";
+      }
+
+      // Skills validation
+      if (!skills || !skills.length) {
+        this.errors.skills = "Select at least one skill!";
+      }
+
+      // Terms validation
+      if (!this.acceptTerms) {
+        this.errors.acceptTerms = "You must accept the Terms & Conditions!";
+      }
+
+      // Return validity flag
+      return Object.keys(this.errors).length === 0;
+    },
+    deep: true,
+  },
+
+}}
 </script>
 
 <template>
@@ -116,25 +213,26 @@ let skills = this.form.skills;
             <label for=""> Country</label>
             <select class="select" v-model="form.country">
                 <option class="opt" value="">Select Country</option>
-                <option class="opt" value="usa">USA</option>
-                <option class="opt" value="uk">UK</option>
-                <option class="opt" value="india">India</option>
-                <option class="opt" value="australia">Australia</option>
+                <option class="opt" v-for="data in computedCountry" :value="data.value">{{data.text}}</option>
+             
             </select>
             <span class="error" v-if="errors.country">{{ errors.country }}</span>
         </div>
         <div class="skills">
-<h3>Select Skills </h3>
-<p class="skill">You Selected :  <span>{{ form.skills.join(", ") }}</span></p>
-
-            <input type="checkbox" id="frontend" value="Frontend" v-model="form.skills" />
-            <label for="frontend">Frontend</label>
-
-            <input type="checkbox" id="backend" value="Backend" v-model="form.skills" />
+            <h3>Select Skills </h3>
+            <p class="skill">You Selected : <span>{{ form.skills.join(", ") }}</span></p>
+            
+         <div v-for="skill in skillsArray">   
+            <input type="checkbox" :value="skill" v-model="form.skills" />
+            <label :for="skill">{{skill}}</label></div>
+            <!-- <input type="checkbox" id="frontend" value="Frontend" v-model="form.skills" /> -->
+            <!-- <label for="frontend">Frontend</label> -->
+      
+            <!-- <input type="checkbox" id="backend" value="Backend" v-model="form.skills" />
             <label for="backend">Backend</label>
 
             <input type="checkbox" id="database" value="Database" v-model="form.skills" />
-            <label for="database">Database</label>
+            <label for="database">Database</label> -->
             <span class="error" v-if="errors.skills">{{ errors.skills }}</span>
         </div>
         <div class="checkbox">
@@ -263,29 +361,29 @@ select .opt {
     accent-color: #28a745;
     cursor: pointer;
 }
+
 .skills {
-  /* border: 1px solid #ccc; */
-  padding: 15px 20px;
-  border-radius: 8px;
-  max-width: 350px;
-  margin: 20px auto;
-  /* background-color: #f9f9f9; */
-  font-family: Arial, sans-serif;
+    /* border: 1px solid #ccc; */
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 350px;
+    margin: 20px auto;
+    /* background-color: #f9f9f9; */
+    font-family: Arial, sans-serif;
 }
 
 .skills h3 {
-  margin-bottom: 10px;
-  color: #333;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .skill {
-  margin-bottom: 15px;
-  color: #007bff;
+    margin-bottom: 15px;
+    color: #007bff;
 }
 
 .skill span {
-  font-weight: bold;
-  color: #28a745;
+    font-weight: bold;
+    color: #28a745;
 }
-
 </style>
