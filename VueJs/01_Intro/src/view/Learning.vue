@@ -20,6 +20,7 @@
     <hr />
     <AuthStateExample />
     <hr/>
+
     <VSHow />
     <hr/>
     <CardParents />
@@ -37,6 +38,9 @@
     <hr>
     <button  @click="show = !show">{{show ? 'Hide' : 'Show'}}</button>
     <Counter v-if="show"/>
+
+    <VHtml />
+
   </div>
 </template>
 <script>
@@ -51,6 +55,7 @@ import VComponent from "@/components/VComponent.vue";
 import VEMit from "@/components/VEMit.vue";
 import VEvents from "@/components/VEvents.vue";
 import VFor from "@/components/VFor.vue";
+import VHtml from "@/components/VHtml.vue";
 import VIf from "@/components/VIf.vue";
 import VModel from "@/components/VModel.vue";
 import Von from "@/components/Von.vue";
@@ -76,6 +81,7 @@ export default {
     VProps,
     VEvents,
     AuthStateExample,
+
     VSHow
 ,CardParents ,
 VModel,Watcher,
@@ -83,6 +89,9 @@ ApiTest,
 PasswordMeter,
 Counter,
 TimerCounter,
-Von },
+Von ,
+    VHtml
+  }
+
 };
 </script>

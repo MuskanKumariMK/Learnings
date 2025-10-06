@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Test_App.MVVM.Views.BindCollection"
+             Title="BindCollection">
+     <StackLayout>
+          <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+          <CollectionView ItemsSource="{Binding ProductsView}">
+               <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                         <Frame Margin="10"
+                           Padding="10"
+                           HeightRequest="120"
+                           HasShadow="True"
+                           CornerRadius="12"
+                           BorderColor="Purple">
+                              <StackLayout>
+                                   <Label Text="{Binding Title}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"/>
+                                   <Label Text="{Binding Description}"
+                                   FontSize="14"
+                                   TextColor="Gray"/>
+                                   <Label Text="{Binding Category}"
+                                   FontSize="12"
+                                   TextColor="DarkBlue"/>
+                                   <Label Text="{Binding AvailableQTY, StringFormat='Qty: {0}'}"
+                                   FontSize="12"
+                                   TextColor="DarkGreen"/>
+                              </StackLayout>
+                         </Frame>
+                    </DataTemplate>
+               </CollectionView.ItemTemplate>
+          </CollectionView>
+     </StackLayout>
+</ContentPage>
