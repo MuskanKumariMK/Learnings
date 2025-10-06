@@ -23,12 +23,12 @@ const routes = [
     component: AdminPage,
     children: [
       {
-        path: "products/create", 
+        path: "products/create",
         name: "CreateProduct",
         component: CreateProduct,
       },
       {
-        path: "products/get", 
+        path: "products/get",
         name: "GetProducts",
         component: GetProducts,
       },
