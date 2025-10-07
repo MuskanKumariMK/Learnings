@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col items-center max-w-2xl p-6 mx-auto">
+   
     <form @submit.prevent="submit" class="w-full">
       <div class="mb-4">
         <label for="name" class="block mb-2 font-bold text-gray-700"

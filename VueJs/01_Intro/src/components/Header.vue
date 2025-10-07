@@ -5,12 +5,7 @@
       <li class="header-li">
         <router-link to="/">Home</router-link>
       </li>
-      <li class="header-li">
-        <router-link to="/contact">Contact</router-link>
-      </li>
-      <li class="header-li" style="padding-right: 10px">
-        <router-link to="/about">About</router-link>
-      </li>
+    
       <li class="header-li" style="padding-right: 10px">
         <router-link to="/learning">Learning</router-link>
       </li>

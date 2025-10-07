@@ -1,5 +1,10 @@
 <template>
   <div class="items-center max-w-2xl p-6 mx-auto justify-content-center">
+    <router-link
+      :to="{ name: 'GetProducts' }"
+      class="px-2 py-1 mb-10 text-xs text-blue-700 bg-green-100 rounded-full"
+      >Get
+    </router-link>
     <form @submit.prevent="submit">
       <div class="mb-4">
         <label for="name" class="block mb-2 font-bold text-gray-700"
