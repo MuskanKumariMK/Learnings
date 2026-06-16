@@ -1,0 +1,21 @@
+a = {2,5}
+b = {4,6,3,9,2,7,2,5}
+c = {1,8,6,132,3,9,6,4,8}
+# print(a,type(a))
+# a.add(74)
+# a.clear()
+# a.copy()
+# a.remove(2)
+# a.pop()
+# a.update([1,5,2,3,4,5,6])
+# print(a.intersection(b))
+# print(a.difference(b))
+# print(a.union(b))
+# print(a.symmetric_difference(b))
+# print(a.isdisjoint(b)) 
+# print(a.isdisjoint(c)) 
+# print(a.issubset(b)) 
+# print(a.issubset(b)) 
+print(a.issuperset(b)) 
+print(b.issuperset(a)) 
+print(len(c))

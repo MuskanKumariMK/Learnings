@@ -1,0 +1,6 @@
+s = set( )
+n = input("Enter a  name  ")
+s.add(n)
+m = input("Enter a  name  ")
+s.add(m)
+print(s)

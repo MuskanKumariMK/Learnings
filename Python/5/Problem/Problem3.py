@@ -1,0 +1,8 @@
+s = set( )
+# n = input("Enter a  number  ")
+# s.add(int(n))
+# m = input("Enter a  name  ")
+# s.add(m)
+s.add(18)
+s.add("18")
+print(s)
