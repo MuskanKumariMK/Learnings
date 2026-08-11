@@ -24,7 +24,7 @@
 		<ApplicationTitle>MAUI_Test_App</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.maui_test_app</ApplicationId>
+		<ApplicationId>com.companyname.mauitestapp</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
