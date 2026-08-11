@@ -7,15 +7,10 @@ namespace MAUI_Test_App.MVVM.ViewModels
      {
           public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
           {
-               string married = value.ToString();
-               if (married == "Married")
-               {
-                    return true;
-               }
-               else
-               {
-                    return false;
-               }
+               return string.Equals(
+                    value?.ToString(),
+                    "Married",
+                    StringComparison.OrdinalIgnoreCase);
           }
 
           public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

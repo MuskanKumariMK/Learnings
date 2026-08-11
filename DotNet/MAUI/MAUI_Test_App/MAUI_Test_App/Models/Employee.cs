@@ -6,7 +6,7 @@ namespace MAUI_Test_App.Models
      public class Employee : INotifyPropertyChanged
      {
           private int id;
-          private string name;
+          private string name = string.Empty;
           private int salary;
           private int age;
 
@@ -64,7 +64,7 @@ namespace MAUI_Test_App.Models
 
           public event PropertyChangedEventHandler? PropertyChanged;
 
-          protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+          protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
           {
                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
           }

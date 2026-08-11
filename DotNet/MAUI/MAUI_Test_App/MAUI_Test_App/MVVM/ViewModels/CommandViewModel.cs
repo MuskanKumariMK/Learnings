@@ -9,13 +9,13 @@ namespace MAUI_Test_App.MVVM.ViewModels
           public ICommand CommandSearch => new Command(CommandSearchMethos);
           private void CommandSearchMethos(object obj)
           {
-               App.Current.MainPage.DisplayAlert("Alert", $"{searchCommand}", "OK");
+               Application.Current?.MainPage?.DisplayAlert("Alert", searchCommand, "OK");
           }
-          public string searchCommand { get; set; }
+          public string searchCommand { get; set; } = string.Empty;
 
           private void ExecuteAlert(object obj)
           {
-               App.Current.MainPage.DisplayAlert("Alert", "Button Clicked", "OK");
+               Application.Current?.MainPage?.DisplayAlert("Alert", "Button Clicked", "OK");
           }
      }
 
