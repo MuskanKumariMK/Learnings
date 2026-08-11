@@ -28,7 +28,7 @@ namespace MAUI_Test_App
             //MainPage = new BindCollection();
             //MainPage = new ConvertExamples();
             //MainPage = new CommandExample();
-            MainPage = new FirstPage();
+            MainPage = new NavigationPage(new FirstPage());
         }
     }
 }

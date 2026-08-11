@@ -8,6 +8,11 @@ public partial class FirstPage : ContentPage
     }
     private void Button_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new SecondPage());
+        Navigation.PushAsync(new SecondPage(nametxt.Text));
     }
+    private void Button_Clicked_1(object sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new ThirdPage());
+    }
+
 }

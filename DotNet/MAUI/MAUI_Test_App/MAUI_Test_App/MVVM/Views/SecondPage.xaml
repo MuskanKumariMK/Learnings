@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MAUI_Test_App.MVVM.Views.SecondPage"
-             Title="SecondPage">
+<ContentPage
+    x:Class="MAUI_Test_App.MVVM.Views.SecondPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SecondPage">
     <StackLayout>
-        <Button Text="Go to Third Page" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Button_Clicked"/>
-        <Button Text="Go to First Page" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Button_Clicked_1"/>
-    </StackLayout>  
+        <Label x:Name="usrtxt" FontSize="20" />
+        <Button
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center"
+            Text="Go to Third Page"
+            VerticalOptions="Center" />
+        <Button
+            Clicked="Button_Clicked_1"
+            HorizontalOptions="Center"
+            Text="Go to First Page"
+            VerticalOptions="Center" />
+    </StackLayout>
 
 </ContentPage>
