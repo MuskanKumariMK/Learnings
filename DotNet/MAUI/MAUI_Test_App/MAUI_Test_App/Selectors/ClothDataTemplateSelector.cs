@@ -1,18 +1,21 @@
-﻿using MAUI_Test_App.MVVM.Models;
+using MAUI_Test_App.MVVM.Models;
 
 namespace MAUI_Test_App.Selectors
 {
+    /// <summary>
+    /// Chooses the design of a product card.
+    /// Offer products use OfferTemplate and the remaining products use NormalTemplate.
+    /// </summary>
     public class ClothDataTemplateSelector : DataTemplateSelector
     {
+        public DataTemplate NormalTemplate { get; set; } = null!;
+        public DataTemplate OfferTemplate { get; set; } = null!;
+
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            var cloth = item as Cloth;
-            if (!cloth.HasOffer)
-            {
-                Application.Current.Resources.TryGetValue("ClothResource", out var ClothResource);
-                return ClothResource as DataTemplate;
-            }
-            return new DataTemplate();
+            return item is Cloth cloth && cloth.HasOffer
+               ? OfferTemplate
+               : NormalTemplate;
         }
     }
 }

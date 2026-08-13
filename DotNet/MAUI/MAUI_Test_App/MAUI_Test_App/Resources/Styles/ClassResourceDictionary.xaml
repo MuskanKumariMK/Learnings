@@ -1,36 +1,135 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <?xml-comp compile="true" ?>
 <ResourceDictionary
     x:Class="MAUI_Test_App.Resources.Styles.ClassResourceDictionary"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MAUI_Test_App.MVVM.Models"
+    xmlns:selectors="clr-namespace:MAUI_Test_App.Selectors">
 
-    <DataTemplate x:Key="ClothResource">
-        <Grid
-            Margin="10,10,10,0"
-            ColumnDefinitions=".1*,.2*,.7*"
-            RowDefinitions="*,*">
-            <Frame
-                Grid.RowSpan="2"
-                Grid.Column="1"
-                Grid.ColumnSpan="2">
-                <Grid>
-                    <Image
-                        Grid.RowSpan="2"
-                        Grid.ColumnSpan="2"
-                        Source="{Binding Image}" />
+    <!-- A ResourceDictionary keeps reusable UI in one place. -->
+
+    <!-- Common styles used by both product templates. -->
+    <Style x:Key="ClothCardStyle" TargetType="Border">
+        <Setter Property="Margin" Value="20,8" />
+        <Setter Property="Padding" Value="14" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Stroke" Value="#E5E7EB" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 18" />
+    </Style>
+
+    <Style
+        x:Key="OfferClothCardStyle"
+        BasedOn="{StaticResource ClothCardStyle}"
+        TargetType="Border">
+        <Setter Property="BackgroundColor" Value="#FFF9E8" />
+        <Setter Property="Stroke" Value="#F4C95D" />
+    </Style>
+
+    <Style x:Key="ClothTitleStyle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="#111827" />
+    </Style>
+
+    <Style x:Key="ClothDescriptionStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+        <Setter Property="MaxLines" Value="2" />
+        <Setter Property="TextColor" Value="#6B7280" />
+    </Style>
+
+    <Style x:Key="ClothStockStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="#059669" />
+    </Style>
+
+    <!-- This template is selected when HasOffer is false. -->
+    <DataTemplate x:Key="NormalClothTemplate" x:DataType="models:Cloth">
+        <Border Style="{StaticResource ClothCardStyle}">
+            <Grid ColumnDefinitions="96,*" ColumnSpacing="16">
+                <Border
+                    HeightRequest="96"
+                    BackgroundColor="#F3F4F6"
+                    StrokeShape="RoundRectangle 14"
+                    StrokeThickness="0"
+                    VerticalOptions="Start">
+                    <Image Margin="8" Aspect="AspectFit" Source="{Binding Image}" />
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                    <Label Style="{StaticResource ClothTitleStyle}" Text="{Binding Title}" />
+                    <Label Style="{StaticResource ClothDescriptionStyle}" Text="{Binding Description}" />
                     <Label
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Text="{Binding Title}"
-                        VerticalOptions="Center" />
+                        FontAttributes="Bold"
+                        FontSize="17"
+                        Text="{Binding Price, StringFormat='₹ {0:F2}'}"
+                        TextColor="#2563EB" />
                     <Label
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Text="{Binding Price, StringFormat='{0:C}'}"
-                        VerticalOptions="Center" />
-                </Grid>
-            </Frame>
-        </Grid>
+                        Style="{StaticResource ClothStockStyle}"
+                        Text="{Binding Stock, StringFormat='In stock: {0}'}" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
     </DataTemplate>
+
+    <!-- This template is selected when HasOffer is true. -->
+    <DataTemplate x:Key="OfferClothTemplate" x:DataType="models:Cloth">
+        <Border Style="{StaticResource OfferClothCardStyle}">
+            <Grid ColumnDefinitions="96,*" ColumnSpacing="16">
+                <Grid>
+                    <Border
+                        HeightRequest="96"
+                        BackgroundColor="White"
+                        StrokeShape="RoundRectangle 14"
+                        StrokeThickness="0"
+                        VerticalOptions="Start">
+                        <Image Margin="8" Aspect="AspectFit" Source="{Binding Image}" />
+                    </Border>
+
+                    <Border
+                        Padding="8,3"
+                        BackgroundColor="#DC2626"
+                        HorizontalOptions="Start"
+                        StrokeShape="RoundRectangle 8"
+                        StrokeThickness="0"
+                        VerticalOptions="Start">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="10"
+                            Text="SALE"
+                            TextColor="White" />
+                    </Border>
+                </Grid>
+
+                <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                    <Label Style="{StaticResource ClothTitleStyle}" Text="{Binding Title}" />
+                    <Label Style="{StaticResource ClothDescriptionStyle}" Text="{Binding Description}" />
+                    <HorizontalStackLayout Spacing="8">
+                        <Label
+                            FontSize="13"
+                            Text="{Binding Price, StringFormat='₹ {0:F2}'}"
+                            TextColor="#9CA3AF"
+                            TextDecorations="Strikethrough"
+                            VerticalOptions="Center" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="{Binding OfferPrice, StringFormat='₹ {0:F2}'}"
+                            TextColor="#DC2626" />
+                    </HorizontalStackLayout>
+                    <Label
+                        Style="{StaticResource ClothStockStyle}"
+                        Text="{Binding Stock, StringFormat='In stock: {0}'}" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <!-- Selector receives both templates and chooses one for every product. -->
+    <selectors:ClothDataTemplateSelector
+        x:Key="ClothTemplateSelector"
+        NormalTemplate="{StaticResource NormalClothTemplate}"
+        OfferTemplate="{StaticResource OfferClothTemplate}" />
 </ResourceDictionary>

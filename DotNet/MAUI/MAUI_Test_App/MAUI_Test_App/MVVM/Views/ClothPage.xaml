@@ -3,10 +3,48 @@
     x:Class="MAUI_Test_App.MVVM.Views.ClothPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Selectors="clr-namespace:MAUI_Test_App.Selectors"
-    Title="ClothPage">
-    <ContentPage.Resources>
-        <Selectors:ClothDataTemplateSelector x:Key="ClothResource" />
-    </ContentPage.Resources>
-    <CollectionView ItemTemplate="{StaticResource ClothResource}" ItemsSource="{Binding Products}" />
+    Title="Cloth Collection"
+    BackgroundColor="#F5F6FA">
+
+    <!--  Styles and templates come from ClassResourceDictionary.xaml.  -->
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout Margin="20,24,20,12" Spacing="4">
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="Cloth Collection"
+                TextColor="#111827" />
+            <Label
+                FontSize="14"
+                Text="{Binding Products.Count, StringFormat='{0} products available'}"
+                TextColor="#6B7280" />
+        </VerticalStackLayout>
+        <RefreshView
+            Grid.Row="1"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}">
+            <CollectionView
+                Grid.Row="1"
+                ItemTemplate="{StaticResource ClothTemplateSelector}"
+                ItemsSource="{Binding Products}"
+                SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout
+                        Padding="30"
+                        HorizontalOptions="Center"
+                        Spacing="8"
+                        VerticalOptions="Center">
+                        <Label
+                            FontSize="40"
+                            HorizontalTextAlignment="Center"
+                            Text="👕" />
+                        <Label
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            Text="No products available" />
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
 </ContentPage>

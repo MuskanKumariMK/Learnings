@@ -1,51 +1,64 @@
-﻿using MAUI_Test_App.MVVM.Models;
+using MAUI_Test_App.MVVM.Models;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MAUI_Test_App.MVVM.ViewModels
 {
+
     public class ClothViewModel
     {
         /// <summary>
-        /// ObservableCollection of Cloth objects representing the products available in the application.
-        ///  ObservableCollection in dotnet is used to provide notifications when items get added, removed, or when the whole list is refreshed. This is particularly useful in MVVM architecture for data binding scenarios, where the UI needs to update automatically when the underlying data changes.
+        /// Products contains the data shown on the Cloth page.
+        /// ObservableCollection tells the UI when an item is added or removed.
         /// </summary>
         public ObservableCollection<Cloth> Products { get; set; }
+        public bool IsRefreshing { get; set; }
+        public ICommand RefreshCommand => new Command(async () =>
+        {
+            IsRefreshing = true;
+            await Task.Delay(2000);
+            ResfreshItems();
+            IsRefreshing = false;
+        });
         public ClothViewModel()
         {
-
+            ResfreshItems();
+        }
+        private void ResfreshItems()
+        {
             Products = new ObservableCollection<Cloth>()
             {
-               new Cloth
-               {
-                   Title = "Green T-Shirt",
-                   Description = "A comfortable cotton t-shirt.",
-                   Price = 15.99m,
-                   Image = "tshirt.png",
-                   Stock = 90,
-                   HasOffer = true,
-                   OfferPrice = 150.99m
-               },
-               new Cloth
-               {
-                   Title = "Green T-Shirt",
-                   Description = "A comfortable cotton t-shirt.",
-                   Price = 19.99m,
-                   Image = "red.png",
-                   Stock = 50,
-                   HasOffer = true,
-                   OfferPrice = 14.99m
-               },
-               new Cloth
-               {
-                   Title = "Green T-Shirt",
-                   Description = "A comfortable cotton t-shirt.",
-                   Price = 99.99m,
-                   Image = "white.png",
-                   Stock = 60,
-                   HasOffer = true,
-                   OfferPrice = 94.99m
-               },
+                new Cloth
+                {
+                    Title = "Classic Green T-Shirt",
+                    Description = "Soft cotton t-shirt for everyday comfort.",
+                    Price = 799m,
+                    Image = "tshirt.png",
+                    Stock = 90,
+                    HasOffer = true,
+                    OfferPrice = 599m
+                },
+                new Cloth
+                {
+                    Title = "Red Casual T-Shirt",
+                    Description = "A relaxed fit t-shirt with a bright finish.",
+                    Price = 649m,
+                    Image = "red.png",
+                    Stock = 50,
+                    HasOffer = false
+                },
+                new Cloth
+                {
+                    Title = "Essential White T-Shirt",
+                    Description = "A clean and simple wardrobe essential.",
+                    Price = 899m,
+                    Image = "white.png",
+                    Stock = 12,
+                    HasOffer = true,
+                    OfferPrice = 699m
+                }
             };
+
         }
     }
 }
